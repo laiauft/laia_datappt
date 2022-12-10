@@ -52,13 +52,13 @@ if uploaded_file is not None:
                        
                 std_value = dataframe[selected_attribute_out].std()
                 has_outliers = outliers_verification_method_one(std_value)      
-                st.header("Detecting outliers with method one")
-                st.subheader("---> Using predetermined standard deviation (10)")
+                st.subheader("Detecting outliers with method one")
+                st.caption("---> Using predetermined standard deviation (10)")
                 st.write(f"Standard deviation for {selected_attribute_out}: ", std_value)
                 st.write(selected_attribute_out, 'has outliers? ', has_outliers)
                 
-                st.header("Detecting outliers with method two")
-                st.subheader("---> Using median plus four standard deviation")
+                st.subheader("Detecting outliers with method two")
+                st.caption("---> Using median plus four standard deviation")
                 
                 outliers = outliers_verification_method_two(dataframe, selected_attribute_out)
                 st.write("Median with four default deviation: ", outliers[0])
